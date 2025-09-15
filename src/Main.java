@@ -17,7 +17,8 @@ public class Main {
 
         w1.join();
         w2.join();
-
+        StringBuffer sb = new StringBuffer();
+        System.out.println(sb.capacity());
         // TODO: Use join() to wait for both threads to finish
     }
 }
