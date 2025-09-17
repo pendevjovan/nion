@@ -9,7 +9,5 @@ public class Arrays {
         }
         System.out.println("Minimum number is "+ min);
         System.out.println("Maximum number is "+ max);
-
-        // TODO: Print the smallest and largest numbers
     }
 }

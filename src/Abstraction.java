@@ -1,55 +1,33 @@
-// TODO: Create an interface called Machine with one method: String start()
-interface Machine{
-    String start();
-}
+import java.util.ArrayList;
+import java.util.List;
 
-
-// TODO: Create an abstract class called Appliance that:
-// - Implements Machine interface
-abstract class Appliance implements Machine {
-    String name;
-
-    public Appliance(String name) {
-        this.name = name;
+abstract class Vehicle{
+    Integer maxSpeed;
+    public void move(){
+        System.out.println("Vehicle is moving with " + maxSpeed);
     }
 }
-
-// TODO: Create a class Fan that:
-// - Extends Appliance
-class Fan extends Appliance{
-    public Fan(String name) {
-        super(name);
-    }
-
+class Car extends Vehicle{
     @Override
-    public String start() {
-        return "Fan is running";
+    public void move() {
     }
 }
-
-
-// TODO: Create a class WashingMachine that:
-// - Extends Appliance
-class WashingMachine extends Appliance {
-    public WashingMachine(String name) {
-        super(name);
-    }
-
+class Bike extends Vehicle {
     @Override
-    public String start() {
-        return "Washing machine is operating";
+    public void move() {
     }
+
 }
-
-
 public class Abstraction {
     public static void main(String[] args) {
-        Machine fan = new Fan("Fan");
-        Machine washer = new WashingMachine("Washing Machine");
-        // TODO: Create objects of Fan and WashingMachine using interface references
-        // TODO: Print the result of start() for each object
-
-        System.out.println(fan.start());
-        System.out.println(washer.start());
+        List<Vehicle> vehicles = new ArrayList<Vehicle>();
+        vehicles.add(new Car());
+        vehicles.add(new Bike());
+        Car car = new Car();
+        car.maxSpeed = 100;
+        car.move();
+        Bike bike = new Bike();
+        bike.maxSpeed = 60;
+        bike.move();
     }
 }

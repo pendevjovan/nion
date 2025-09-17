@@ -5,15 +5,15 @@ import java.util.stream.*;
 public class StreamFilter {
     public static void main(String[] args) {
 
-        List<String> products = Arrays.asList("Laptop", "Pen", "Notebook", "Headphones", "Smartphone");
-        products.forEach(System.out::println);
-        // TODO: Print the original list
-        products.stream()
-                .filter(x->x.length()>5).map(String::toUpperCase).sorted().forEach(System.out::println);
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<Integer> evenNumbers = new ArrayList<>();
+        for (Integer n : numbers) {
+            if (n % 2 == 0) {
+                evenNumbers.add(n * 2);
+            }
 
+        }
+        System.out.println(evenNumbers);
 
-        // TODO: Filter names longer than 5 characters, convert to uppercase, sort, and collect into a list
-
-        // TODO: Print the filtered list
     }
 }

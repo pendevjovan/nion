@@ -1,40 +1,20 @@
-// TODO: Define custom exception InvalidAgeException extending Exception
-class InvalidAgeException extends Exception{
-    public InvalidAgeException(String message){
-        super(message);
+import java.util.ArrayList;
+import java.util.List;
+class ShapeFactory {
+    public Shape getShape(String shapeType) {
+        if (shapeType.equals("Square")) {
+            return new Circle();
+        }
+        if (shapeType.equals("Circle")) {
+            return new Circle();
+        } else {
+            return null;
+        }
     }
 }
-
 public class Exercise {
-
-    public static void checkAge(int age) throws InvalidAgeException {
-        if(age<18)
-        {
-            throw new InvalidAgeException(" Age must be 18 or older");
-        }
-        else{
-            System.out.println("Access granted");
-        }
-    }
-
     public static void main(String[] args) {
-        try{
-            checkAge(16);
-        }
-        catch(InvalidAgeException e){
-            System.out.println("Exception caught:" + e.getMessage());
-
-        }
-
-        try{
-            checkAge(21);
-        }
-        catch(InvalidAgeException e){
-            System.out.println("Exception caught:" + e.getMessage());
-
-        }
-
+        System.out.println("ShapeFactory");
     }
 
 }
-
